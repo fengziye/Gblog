@@ -1,21 +1,14 @@
 <template>
     <div id="app">
-        <!--    <div id="nav">-->
-        <!--      <router-link to="/">Home</router-link> |-->
-        <!--      <router-link to="/about">About</router-link> |-->
-        <!--      <router-link to="/anima">Anima</router-link> |-->
-        <!--      <router-link to="/fishy">Fishy</router-link> |-->
-        <!--      <router-link to="/matrix">Matrix</router-link>-->
-        <!--    </div>-->
         <layout-header></layout-header>
         <layout-body></layout-body>
         <layout-footer></layout-footer>
     </div>
 </template>
 <script>
-    import layoutHeader from './components/layout/layout-header'
-    import layoutBody from './components/layout/layout-body'
-    import layoutFooter from './components/layout/layout-footer'
+    import layoutHeader from '@/components/layout/layout-header'
+    import layoutBody from '@/components/layout/layout-body'
+    import layoutFooter from '@/components/layout/layout-footer'
 
     export default {
         name: "app",

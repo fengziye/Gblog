@@ -17,7 +17,9 @@
             <!--文章列表-->
             <main class="site-main">
                 <section-title>推荐</section-title>
-                <post></post>
+                <template v-for="item in postList">
+                  <post :key="item"></post>
+                </template>
             </main>
         </div>
     </div>
@@ -49,7 +51,8 @@
                         img: 'https://cdn.zhebk.cn/usr/themes/Akina//images/feature/feature3.jpg',
                         href: 'https://zhebk.cn/archives.html'
                     }
-                ]
+                ],
+                postList: 5
             }
         },
         components: {

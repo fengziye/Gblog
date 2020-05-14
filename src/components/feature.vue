@@ -13,10 +13,12 @@
         props: {
             data: {
                 type: Object,
-                default: {
-                    title: 'Akina',
-                    img: 'https://cdn.zhebk.cn/usr/themes/Akina//images/feature/feature1.jpg',
-                    href: 'https://zhebk.cn/Web/Akina.html'
+                default: () =>{
+                    return{
+                        title: 'Akina',
+                        img: 'https://cdn.zhebk.cn/usr/themes/Akina//images/feature/feature1.jpg',
+                        href: 'https://zhebk.cn/Web/Akina.html'
+                    }
                 }
             }
         }
