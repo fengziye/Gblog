@@ -1,5 +1,5 @@
 # gblog
-
+vue+element-ui+vuex+mock+github
 ## Project setup
 ```
 npm install
