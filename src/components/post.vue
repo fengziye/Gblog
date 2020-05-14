@@ -43,9 +43,9 @@
                 type: Object,
                 default: () =>{
                     return{
-                        isTop: false,
+                        isTop: true,
                         path: 'https://zhebk.cn/Web/Akina.html',
-                        banner: 'https://image.zhebk.cn/Akina.jpg?imageView2/1/w/100/h/100/interlace/1/q/90',
+                        banner: 'https://s1.ax1x.com/2020/05/14/YDhagx.jpg',
                         title: 'Akina for Typecho 主题模板',
                         isHot: false,
                         pubTime: '2018-10-15',

@@ -3,7 +3,7 @@
         <layout-header></layout-header>
         <layout-body></layout-body>
         <layout-footer></layout-footer>
-        <loading :loading="true"></loading>
+        <loading :loading="false"></loading>
     </div>
 </template>
 <script>
@@ -24,12 +24,14 @@
 <style lang="less">
     #app {
         font-size: 17px;
+        color: #6f6f6f;
         &.sky{
             /**星空主题**/
             background: radial-gradient(200% 100% at bottom center,#f7f7b6,#e96f92,#1b2947);
             background: radial-gradient(220% 105% at top center,#1b2947 10%,#75517b 40%,#e96f92 65%,#f7f7b6);
             background-attachment: fixed;
             overflow: hidden;
+            color: #FFFFFF;
         }
     }
 

@@ -10,7 +10,7 @@
         props:{
             src:{
                 type: String,
-                default: 'https://image.zhebk.cn/Akina.jpg'
+                default: 'https://s1.ax1x.com/2020/05/14/YDfxNd.jpg'
             }
         }
     }

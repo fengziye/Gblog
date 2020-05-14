@@ -5,7 +5,7 @@
             <div class="footer-item">2</div>
             <div class="footer-item">3</div>
         </div>
-        <div class="copyright">Copyright © 2020 by <a target="_blank" class="out-link" href="https://www.fengziy.cn">fengziy.cn</a> . All rights reserved. | <a target="_blank" class="out-link" href="https://zhebk.cn/Web/Akina.html"></a>Theme: Akina For Typecho.</div>
+        <div class="copyright">Copyright © 2020 by <a target="_blank" class="out-link" href="https://www.fengziy.cn">fengziy.cn</a> . All rights reserved. | <a target="_blank" class="out-link" href="https://zhebk.cn/Web/Akina.html">Theme: Akina For Typecho</a>.</div>
     </div>
 </template>
 
@@ -18,7 +18,7 @@
 <style scoped lang="less">
 #layout-footer{
     padding: 2%;
-    background: #fff;
+    /*background: #fff;*/
     border-top: 1px solid #F7F7F7;
     font-size: 13px;
     color: #9c9c9c;

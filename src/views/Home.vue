@@ -48,17 +48,17 @@
                 features: [
                     {
                         title: 'Akina',
-                        img: 'https://cdn.zhebk.cn/usr/themes/Akina//images/feature/feature1.jpg',
+                        img: 'https://s1.ax1x.com/2020/05/14/YDfRnU.jpg',
                         href: 'https://zhebk.cn/Web/Akina.html'
                     },
                     {
                         title: '使用说明',
-                        img: 'https://cdn.zhebk.cn/usr/themes/Akina//images/feature/feature2.jpg',
+                        img: 'https://s1.ax1x.com/2020/05/14/YDf4AJ.jpg',
                         href: 'https://zhebk.cn/userAkina.html'
                     },
                     {
                         title: '文章归档',
-                        img: 'https://cdn.zhebk.cn/usr/themes/Akina//images/feature/feature3.jpg',
+                        img: 'https://s1.ax1x.com/2020/05/14/YDfT91.jpg',
                         href: 'https://zhebk.cn/archives.html'
                     }
                 ],
