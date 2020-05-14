@@ -3,19 +3,21 @@
         <layout-header></layout-header>
         <layout-body></layout-body>
         <layout-footer></layout-footer>
+        <loading :loading="true"></loading>
     </div>
 </template>
 <script>
     import layoutHeader from '@/components/layout/layout-header'
     import layoutBody from '@/components/layout/layout-body'
     import layoutFooter from '@/components/layout/layout-footer'
-
+    import Loading from '@/components/loading'
     export default {
         name: "app",
         components: {
             layoutHeader,
             layoutBody,
-            layoutFooter
+            layoutFooter,
+            Loading
         }
     }
 </script>
@@ -108,53 +110,4 @@
             }
         }
     }
-
-    /*.gBlog-fish {*/
-    /*  background-color: #f90;*/
-    /*  background-image: linear-gradient(90deg, #f90, #f60, #f90);*/
-    /*  border-radius: 50% 50% 0 0;*/
-    /*  color: #c00;*/
-    /*  font-size: 3vmin;*/
-    /*  height: 3vmin;*/
-    /*  left: calc(50% - 1.5vmin);*/
-    /*  position: fixed;*/
-    /*  text-align: center;*/
-    /*  top: -5%;*/
-    /*  transition: left, top ease-in-out;*/
-    /*  user-select: none;*/
-    /*  width: 3vmin;*/
-    /*  &:before {*/
-    /*    background-color: #000;*/
-    /*    border: solid 1px #fff;*/
-    /*    border-radius: 50%;*/
-    /*    bottom: 60%;*/
-    /*    content: "";*/
-    /*    left: 30%;*/
-    /*    position: absolute;*/
-    /*    right: 30%;*/
-    /*    top: 5%;*/
-    /*  }*/
-
-    /*  &:after {*/
-    /*    border: solid 1.5vmin transparent;*/
-    /*    border-bottom-color: #f60;*/
-    /*    bottom: -40%;*/
-    /*    content: "";*/
-    /*    height: 0;*/
-    /*    left: 0;*/
-    /*    position: absolute;*/
-    /*    right: 0;*/
-    /*    top: 40%;*/
-    /*    width: 0;*/
-    /*  }*/
-    /*  &:hover {*/
-    /*    background-color: #fff;*/
-    /*    background-image: none;*/
-    /*    cursor: pointer;*/
-
-    /*    &:after {*/
-    /*      border-bottom-color: #fff;*/
-    /*    }*/
-    /*  }*/
-    /*}*/
 </style>

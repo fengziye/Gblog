@@ -2,11 +2,19 @@
     <div class="home">
         <banner></banner>
         <div class="site-content">
-            <div class="slogan">
-                向上的路并不拥挤，大多数选择了安逸！
+            <!--通知栏-->
+            <div class="notify" @click="isSearch=!isSearch">
+                <div class="search-result" v-if="hideSlogan">
+                    <span v-if="isSearch">搜索结果："Web" 相关文章</span>
+                    <span v-if="isCategory">分类 "Web" 相关文章</span>
+                </div>
+                <div class="slogan" v-else>
+                    向上的路并不拥挤，大多数选择了安逸！
+                </div>
             </div>
+
             <!--焦点图-->
-            <div class="top-feature">
+            <div class="top-feature" v-if="!hideSlogan">
                 <section-title>聚焦</section-title>
                 <div class="feature-content">
                     <div class="feature-item" v-for="item in features" :key="item.title">
@@ -15,10 +23,10 @@
                 </div>
             </div>
             <!--文章列表-->
-            <main class="site-main">
-                <section-title>推荐</section-title>
+            <main class="site-main" :class="{'search':hideSlogan}">
+                <section-title v-if="!hideSlogan">推荐</section-title>
                 <template v-for="item in postList">
-                  <post :key="item"></post>
+                    <post :key="item"></post>
                 </template>
             </main>
         </div>
@@ -35,6 +43,8 @@
         name: 'Home',
         data() {
             return {
+                isSearch: false,
+                isCategory: false,
                 features: [
                     {
                         title: 'Akina',
@@ -60,6 +70,11 @@
             Feature,
             sectionTitle,
             Post
+        },
+        computed: {
+          hideSlogan(){
+            return this.isSearch || this.isCategory
+          }
         }
     }
 </script>
@@ -71,11 +86,26 @@
     }
 
     .site-content {
-        .slogan {
-            padding: 20px;
+        .notify {
             margin: 60px 0;
-            background-color: #FBFBFB;
             border-radius: 3px;
+
+            & > div {
+                padding: 20px;
+            }
+        }
+
+        .slogan {
+            background-color: #FBFBFB;
+        }
+
+        .search-result {
+            padding: 15px 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 400;
+            border: 1px dashed #ddd;
+            color: #828282;
         }
     }
 
@@ -97,6 +127,10 @@
     }
 
     .site-main {
-        padding: 80px 0 0 0;
+        padding-top: 80px;
+
+        &.search {
+            padding-top: 0;
+        }
     }
 </style>
