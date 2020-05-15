@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import store from '@/store'
 
 Vue.use(VueRouter)
 
@@ -45,5 +46,14 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 })
-
+router.beforeEach((to, from, next) => {
+  store.commit('SET_LOADING',true);
+  next();
+})
+router.afterEach((to, from) => {
+  // 最多延迟 1.5s 关闭 loading
+  setTimeout(()=>{
+    store.commit('SET_LOADING',false);
+  },1500)
+})
 export default router

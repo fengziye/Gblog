@@ -14,7 +14,6 @@
         },
         methods:{
           init(){
-              console.log('c')
               let _this = this
               this.minHeight = document.documentElement.clientHeight
               window.onresize = function () {

@@ -26,7 +26,7 @@
             <main class="site-main" :class="{'search':hideSlogan}">
                 <section-title v-if="!hideSlogan">推荐</section-title>
                 <template v-for="item in postList">
-                    <post :key="item"></post>
+                    <post :post="item" :key="item.id"></post>
                 </template>
             </main>
         </div>
@@ -38,31 +38,15 @@
     import Feature from '@/components/feature'
     import sectionTitle from '@/components/section-title'
     import Post from '@/components/post'
-
+    import {fetchFocus,fetchList} from '../api'
     export default {
         name: 'Home',
         data() {
             return {
                 isSearch: false,
                 isCategory: false,
-                features: [
-                    {
-                        title: 'Akina',
-                        img: 'https://s1.ax1x.com/2020/05/14/YDfRnU.jpg',
-                        href: 'https://zhebk.cn/Web/Akina.html'
-                    },
-                    {
-                        title: '使用说明',
-                        img: 'https://s1.ax1x.com/2020/05/14/YDf4AJ.jpg',
-                        href: 'https://zhebk.cn/userAkina.html'
-                    },
-                    {
-                        title: '文章归档',
-                        img: 'https://s1.ax1x.com/2020/05/14/YDfT91.jpg',
-                        href: 'https://zhebk.cn/archives.html'
-                    }
-                ],
-                postList: 5
+                features: [],
+                postList: []
             }
         },
         components: {
@@ -75,6 +59,26 @@
           hideSlogan(){
             return this.isSearch || this.isCategory
           }
+        },
+        methods: {
+            fetchFocus(){
+                fetchFocus().then(res => {
+                    this.features = res.data || []
+                }).catch(err => {
+                    console.log(err)
+                })
+            },
+            fetchList(){
+                fetchList().then(res=>{
+                    this.postList = res.data.items || []
+                }).catch(err=>{
+                    console.log(err)
+                })
+            }
+        },
+        mounted() {
+            this.fetchFocus();
+            this.fetchList();
         }
     }
 </script>

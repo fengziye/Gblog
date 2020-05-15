@@ -40,20 +40,7 @@
         name: "post",
         props: {
             post: {
-                type: Object,
-                default: () =>{
-                    return{
-                        isTop: true,
-                        path: 'https://zhebk.cn/Web/Akina.html',
-                        banner: 'https://s1.ax1x.com/2020/05/14/YDhagx.jpg',
-                        title: 'Akina for Typecho 主题模板',
-                        isHot: false,
-                        pubTime: '2018-10-15',
-                        summary: '简介Akina for Typecho除了原本Akina的特性外，加入了DNS预解析，或许可以加快站点的访问速度。支持了无插件的代码高...',
-                        viewsCount: '3.5k',
-                        commentsCount: '201'
-                    }
-                }
+                type: Object
             }
         }
     }

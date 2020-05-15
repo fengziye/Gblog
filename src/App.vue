@@ -1,9 +1,9 @@
 <template>
-    <div id="app">
+    <div id="app" v-cloak>
+        <loading></loading>
         <layout-header></layout-header>
         <layout-body></layout-body>
         <layout-footer></layout-footer>
-        <loading :loading="false"></loading>
     </div>
 </template>
 <script>
