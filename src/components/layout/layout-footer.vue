@@ -18,12 +18,11 @@
 <style scoped lang="less">
 #layout-footer{
     padding: 2%;
-    /*background: #fff;*/
     border-top: 1px solid #F7F7F7;
     font-size: 13px;
     color: #9c9c9c;
     a.out-link:hover{
-        color: #ff9900;
+        color: #d82e16;
     }
     .footer-main{
         max-width: 800px;

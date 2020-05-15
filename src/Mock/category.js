@@ -1,7 +1,7 @@
 const Mock = require('mockjs');
 export default [
     {
-        url: '/category/list',
+        url: '/category',
         type: 'get',
         response: () => {
             return {
@@ -10,22 +10,22 @@ export default [
                     {
                         id: 1,
                         title: 'JAVA',
-                        href: '#'
+                        href: '/category/java'
                     },
                     {
                         id: 2,
                         title: 'SpringBoot',
-                        href: '#',
+                        href: '/category/SpringBoot',
                     },
                     {
                         id: 3,
                         title: 'MySql',
-                        href: '#'
+                        href: '/category/MySql'
                     },
                     {
                         id: 4,
                         title: '随笔',
-                        href: '#'
+                        href: '/category/live'
                     }
                 ]
             }

@@ -1,7 +1,7 @@
 <template>
     <div id="app" v-cloak>
         <loading></loading>
-        <layout-header></layout-header>
+        <layout-header :fixed="fixed" :hidden="hidden"></layout-header>
         <layout-body></layout-body>
         <layout-footer></layout-footer>
     </div>
@@ -13,11 +13,39 @@
     import Loading from '@/components/loading'
     export default {
         name: "app",
+        data(){
+          return {
+              lastScrollTop: 0,
+              fixed: false,
+              hidden: false
+          }
+        },
         components: {
             layoutHeader,
             layoutBody,
             layoutFooter,
             Loading
+        },
+        methods: {
+            watchScroll() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if (scrollTop===0){
+                    this.fixed = false;
+                } else if (scrollTop>=this.lastScrollTop){
+                    this.fixed = false;
+                    this.hidden = true;
+                } else {
+                    this.fixed = true
+                    this.hidden = false
+                }
+                this.lastScrollTop = scrollTop
+            }
+        },
+        mounted() {
+            window.addEventListener('scroll', this.watchScroll)
+        },
+        beforeDestroy () {
+            window.removeEventListener("scroll", this.watchScroll);
         }
     }
 </script>
@@ -32,19 +60,6 @@
             background-attachment: fixed;
             overflow: hidden;
             color: #FFFFFF;
-        }
-    }
-
-    #nav {
-        padding: 30px;
-
-        a {
-            font-weight: bold;
-            color: #2c3e50;
-
-            &.router-link-exact-active {
-                color: #42b983;
-            }
         }
     }
 
