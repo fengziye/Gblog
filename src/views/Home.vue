@@ -15,7 +15,7 @@
 
             <!--焦点图-->
             <div class="top-feature" v-if="!hideSlogan">
-                <section-title>聚焦</section-title>
+                <section-title>聚焦<small-ico></small-ico></section-title>
                 <div class="feature-content">
                     <div class="feature-item" v-for="item in features" :key="item.title">
                         <Feature :data="item"></Feature>
@@ -38,6 +38,7 @@
     import Feature from '@/components/feature'
     import sectionTitle from '@/components/section-title'
     import Post from '@/components/post'
+    import SmallIco from '@/components/small-ico'
     import {fetchFocus,fetchList} from '../api'
     export default {
         name: 'Home',
@@ -53,7 +54,8 @@
             Banner,
             Feature,
             sectionTitle,
-            Post
+            Post,
+            SmallIco
         },
         computed: {
           hideSlogan(){

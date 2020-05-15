@@ -1,5 +1,5 @@
 <template>
-    <article class="post post-list" itemscope="" itemtype="http://schema.org/BlogPosting">
+    <article class="post post-list">
         <div class="post-entry">
             <div class="feature">
                 <a :href="post.path">
@@ -11,22 +11,22 @@
                 <a href="https://zhebk.cn/Web/Akina.html"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</a>
             </h1>
             <div class="p-time">
-                <i class="iconfont iconmeditor-time"></i> {{post.pubTime}}<i v-if="post.isHot" class="iconfont hotpost" style="margin-left: 5px;"></i>
+                <i class="iconfont iconmeditor-time"></i> {{post.pubTime | parseTime}}<i v-if="post.isHot" class="iconfont iconfire" style="margin-left: 5px;color: #d81e06;"></i>
             </div>
             <p class="summary">{{post.summary}}</p>
             <footer class="entry-footer">
                 <div class="post-more">
-                    <a href="https://zhebk.cn/Web/Akina.html"><i class="iconfont"></i></a>
+                    <a href="https://zhebk.cn/Web/Akina.html"><i class="iconfont iconfish-li" style="font-size: 25px;"></i></a>
                 </div>
                 <div class="info-meta">
                     <div class="comnum">
                         <span>
-                            <i class="iconfont"></i>
+                            <i class="iconfont iconcomment"></i>
                             <a href="https://zhebk.cn/Web/Akina.html">{{post.commentsCount}} 条评论</a>
                         </span>
                     </div>
                     <div class="views">
-                        <span><i class="iconfont"></i>{{post.viewsCount}} 热度</span>
+                        <span><i class="iconfont iconeyes"></i>{{post.viewsCount}} 热度</span>
                     </div>
                 </div>
             </footer>
@@ -36,11 +36,17 @@
 </template>
 
 <script>
+    import {parseTime} from '../utils'
     export default {
         name: "post",
         props: {
             post: {
                 type: Object
+            }
+        },
+        filters:{
+            parseTime(v){
+                return parseTime(v,'{y}-{m}-{d}');
             }
         }
     }
@@ -89,6 +95,8 @@
             color: #989898;
             letter-spacing: 1px;
             font-family: din,'Hiragino Sans GB','Microsoft Yahei',Arial,sans-serif;
+            display: flex;
+            align-items: center;
         }
         p.summary {
             min-height: 60px;
@@ -104,6 +112,10 @@
             .post-more {
                 margin-top: 10px;
                 text-align: right;
+                color: #A0DAD0;
+                &:hover{
+                    color: #737373;
+                }
             }
             .info-meta {
                 margin-top: 10px;

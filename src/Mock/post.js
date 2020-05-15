@@ -18,7 +18,7 @@ for (let i = 0; i < count; i++) {
         path: 'https://zhebk.cn/Web/Akina.html',
         'banner|+1': banners,
         'isHot|1-3': true,
-        timestamp: +Mock.Random.date('T'),
+        pubTime: +Mock.Random.date('T'),
         title: Mock.Random.ctitle(10,20),
         summary: Mock.Random.cparagraph(),
         content: baseContent,
