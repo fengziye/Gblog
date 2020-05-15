@@ -11,7 +11,7 @@
                 <a href="https://zhebk.cn/Web/Akina.html"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</a>
             </h1>
             <div class="p-time">
-                <i class="iconfont"></i> {{post.pubTime}}<i v-if="post.isHot" class="iconfont hotpost" style="margin-left: 5px;"></i>
+                <i class="iconfont iconmeditor-time"></i> {{post.pubTime}}<i v-if="post.isHot" class="iconfont hotpost" style="margin-left: 5px;"></i>
             </div>
             <p class="summary">{{post.summary}}</p>
             <footer class="entry-footer">
