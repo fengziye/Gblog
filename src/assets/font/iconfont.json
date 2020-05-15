@@ -6,6 +6,13 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "1185470",
+      "name": "qq",
+      "font_class": "qq",
+      "unicode": "e630",
+      "unicode_decimal": 58928
+    },
+    {
       "icon_id": "12569168",
       "name": "search",
       "font_class": "search",
@@ -32,13 +39,6 @@
       "font_class": "gitee",
       "unicode": "e601",
       "unicode_decimal": 58881
-    },
-    {
-      "icon_id": "10457743",
-      "name": "csdn logo",
-      "font_class": "csdnlogo",
-      "unicode": "e619",
-      "unicode_decimal": 58905
     },
     {
       "icon_id": "10678177",
