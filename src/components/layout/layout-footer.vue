@@ -77,7 +77,6 @@
                     display: flex;
                     justify-content: space-around;
                     align-items: center;
-                    /*margin-bottom: 10px;*/
                     flex-wrap: wrap;
                     & > div{
                         margin-bottom: 10px;

@@ -3,22 +3,19 @@
         <div class="post-entry">
             <div class="feature">
                 <a :href="post.path">
-                    <!--                    <div class="overlay"><i class="iconfont"></i></div>-->
                     <img :src="post.banner"/>
                 </a>
             </div>
             <h1 class="entry-title">
-                <a href="https://zhebk.cn/Web/Akina.html"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</a>
+                <a :href="post.path"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</a>
             </h1>
             <div class="p-time">
-                <i class="iconfont iconmeditor-time"></i> {{post.pubTime | parseTime}}<i v-if="post.isHot"
-                                                                                         class="iconfont iconfire"
-                                                                                         style="margin-left: 5px;color: #d81e06;"></i>
+                <i class="iconfont iconmeditor-time"></i> {{post.pubTime | parseTime}}<i v-if="post.isHot" class="iconfont iconfire" style="margin-left: 5px;color: #d81e06;"></i>
             </div>
             <p class="summary">{{post.summary}}</p>
             <footer class="entry-footer">
                 <div class="post-more">
-                    <a href="https://zhebk.cn/Web/Akina.html"><i class="iconfont iconfish-li" style="font-size: 25px;"></i></a>
+                    <a :href="post.path"><i class="iconfont iconfish-li" style="font-size: 25px;"></i></a>
                 </div>
                 <div class="info-meta">
                     <div class="comnum">
@@ -125,7 +122,7 @@
                 text-align: right;
                 color: #A0DAD0;
 
-                &:hover {
+                a:hover {
                     color: #737373;
                 }
             }

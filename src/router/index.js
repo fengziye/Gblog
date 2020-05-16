@@ -51,9 +51,9 @@ router.beforeEach((to, from, next) => {
   next();
 })
 router.afterEach((to, from) => {
-  // 最多延迟 1.5s 关闭 loading
+  // 最多延迟 3s 关闭 loading
   setTimeout(()=>{
     store.commit('SET_LOADING',false);
-  },1500)
+  },3000)
 })
 export default router

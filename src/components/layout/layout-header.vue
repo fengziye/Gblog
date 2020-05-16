@@ -7,7 +7,8 @@
             </a>
         </div>
         <div class="site-menus">
-            <div class="menu-item"><a href="#">首页</a></div>
+            <div class="menu-item header-search"><header-search/></div>
+            <div class="menu-item"><a href="/fishy">首页</a></div>
             <div class="menu-item hasChild">
                 <a href="#">文章</a>
                 <div class="childMenu" v-if="category.length">
@@ -21,10 +22,12 @@
 </template>
 
 <script>
+    import HeaderSearch from '@/components/header-search'
     import {fetchCategory} from '../../api'
 
     export default {
         name: "layout-header",
+        components: {HeaderSearch},
         props: {
             fixed: {
                 type: Boolean,
@@ -112,10 +115,11 @@
         align-items: center;
 
         .menu-item {
-            width: 60px;
+            min-width: 60px;
             height: 50px;
             line-height: 50px;
             text-align: center;
+            position: relative;
             a{
                 padding: 12px 10px;
                 color: #545454;
@@ -139,8 +143,8 @@
             background-color: #FDFDFD;
             border-radius: 3px;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
-            position: relative;
-            top: 5px;
+            position: absolute;
+            top: 55px;
             z-index: 2;
             opacity: 0;
             visibility: hidden;

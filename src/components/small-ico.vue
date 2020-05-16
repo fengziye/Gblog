@@ -14,7 +14,7 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="less">
     /*****/
     .loader {
         position: relative;
@@ -24,6 +24,9 @@
         margin: 0 10px;
         display: inline-block;
         vertical-align: middle;
+        &:hover .line{
+            animation-play-state: paused;
+        }
     }
 
     .loader-7 .line {

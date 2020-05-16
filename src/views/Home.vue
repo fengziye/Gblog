@@ -8,9 +8,7 @@
                     <span v-if="isSearch">搜索结果："Web" 相关文章</span>
                     <span v-if="isCategory">分类 "Web" 相关文章</span>
                 </div>
-                <div class="slogan" v-else>
-                    向上的路并不拥挤，大多数选择了安逸！
-                </div>
+                <quote class="slogan" v-else>The way up is not crowded, and most chose ease.</quote>
             </div>
 
             <!--焦点图-->
@@ -39,6 +37,7 @@
     import sectionTitle from '@/components/section-title'
     import Post from '@/components/post'
     import SmallIco from '@/components/small-ico'
+    import Quote from '@/components/quote'
     import {fetchFocus,fetchList} from '../api'
     export default {
         name: 'Home',
@@ -55,7 +54,8 @@
             Feature,
             sectionTitle,
             Post,
-            SmallIco
+            SmallIco,
+            Quote
         },
         computed: {
           hideSlogan(){
@@ -96,9 +96,9 @@
             }
         }
 
-        .slogan {
-            background-color: #FBFBFB;
-        }
+        /*.slogan {*/
+        /*    background-color: #FBFBFB;*/
+        /*}*/
 
         .search-result {
             padding: 15px 20px;
