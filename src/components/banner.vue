@@ -14,9 +14,6 @@
             }
         },
         methods:{
-            aa(e){
-                console.log(e)
-            }
         }
     }
 </script>
