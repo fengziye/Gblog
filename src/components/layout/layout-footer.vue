@@ -61,4 +61,30 @@
         text-align: center;
     }
 }
+    /*****/
+    @media (max-width: 800px){
+        #layout-footer{
+            .footer-main .footer-item:nth-child(3){
+                flex: 2;
+            }
+        }
+    }
+    @media (max-width: 600px){
+        #layout-footer{
+            .footer-main {
+                display: block;
+                .footer-item{
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                    /*margin-bottom: 10px;*/
+                    flex-wrap: wrap;
+                    & > div{
+                        margin-bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+    /*****/
 </style>

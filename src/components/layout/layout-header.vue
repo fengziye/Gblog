@@ -80,6 +80,16 @@
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         }
     }
+    @media (max-width: 960px){
+        #layout-header{
+            padding: 0 20px;
+        }
+    }
+    @media (max-width: 600px){
+        #layout-header{
+            padding: 0 10px;
+        }
+    }
 
     .site-logo {
         text-align: center;

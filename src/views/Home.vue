@@ -85,11 +85,6 @@
     }
 </script>
 <style scoped lang="less">
-    @media (max-width: 800px) {
-        .top-feature {
-            display: none;
-        }
-    }
 
     .site-content {
         .notify {
@@ -139,4 +134,23 @@
             padding-top: 0;
         }
     }
+    /******/
+    @media (max-width: 800px) {
+        .top-feature {
+            display: none;
+        }
+        .site-main {
+            padding-top: 40px;
+        }
+        .site-content {
+            .notify {
+                margin: 30px 0 0 0;
+            }
+            .search-result {
+                margin-bottom: 20px;
+                font-size: 16px;
+            }
+        }
+    }
+    /******/
 </style>

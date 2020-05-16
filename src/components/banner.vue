@@ -35,7 +35,7 @@
     @media (max-width: 960px){
         #banner {height: 400px;}
     }
-    @media (max-width: 860px){
-        #banner {height: 300px;}
+    @media (max-width: 800px){
+        #banner {display: none;}
     }
 </style>
