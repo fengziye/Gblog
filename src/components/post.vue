@@ -2,12 +2,12 @@
     <article class="post post-list">
         <div class="post-entry">
             <div class="feature">
-                <a :href="`/article/${post.id}`">
+                <router-link :to="`/article/${post.id}`">
                     <img :src="post.banner"/>
-                </a>
+                </router-link>
             </div>
             <h1 class="entry-title">
-                <a :href="`/article/${post.id}`"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</a>
+                <router-link :to="`/article/${post.id}`"><span v-if="post.isTop" style="color:#ff6d6d;font-weight:600">[置顶] </span>{{post.title}}</router-link>
             </h1>
             <div class="p-time">
                 <i class="iconfont iconmeditor-time"></i> {{post.pubTime | parseTime}}<i v-if="post.isHot" class="iconfont iconfire" style="margin-left: 5px;color: #d81e06;"></i>
@@ -15,7 +15,7 @@
             <p class="summary">{{post.summary}}</p>
             <footer class="entry-footer">
                 <div class="post-more">
-                    <a :href="`/article/${post.id}`"><i class="iconfont iconfish-li" style="font-size: 25px;"></i></a>
+                    <router-link :to="`/article/${post.id}`"><i class="iconfont iconfish-li" style="font-size: 25px;"></i></router-link>
                 </div>
                 <div class="info-meta">
                     <div class="comnum">

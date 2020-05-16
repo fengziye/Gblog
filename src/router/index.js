@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
 import store from '@/store'
 
 Vue.use(VueRouter)
@@ -8,41 +7,48 @@ Vue.use(VueRouter)
 const routes = [
     {
         path: '/',
-        name: 'Home',
-        component: Home
+        name: 'home',
+        component: () => import('../views/Home.vue')
+    },
+    {
+        path: '/category/:key',
+        name: 'category',
+        component: () => import('../views/Home.vue')
     },
     {
         path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+        name: 'about',
+        component: () => import('../views/About.vue')
+    },
+    {
+        path: '/friend',
+        name: 'friend',
+        component: () => import('../views/Friend.vue')
     },
     {
         path: '/anima',
-        name: 'Anima',
-        component: () => import( '../views/anima.vue')
+        name: 'anima',
+        component: () => import('../views/anima.vue')
     },
     {
         path: '/fishy',
-        name: 'Fishy',
-        component: () => import( '../views/fishy.vue')
+        name: 'fishy',
+        component: () => import('../views/fishy.vue')
     },
     {
         path: '/peep',
         name: 'Peep',
-        component: () => import( '../views/people.vue')
+        component: () => import('../views/people.vue')
     },
     {
         path: '/matrix',
-        name: 'Matrix',
-        component: () => import( '../views/matrix.vue')
+        name: 'matrix',
+        component: () => import('../views/matrix.vue')
     },
     {
         path: '/article/:id',
-        name: 'Article',
-        component: () => import( '../views/Article.vue')
+        name: 'article',
+        component: () => import('../views/Article.vue')
     }
 ]
 

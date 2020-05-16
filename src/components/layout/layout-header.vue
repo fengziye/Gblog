@@ -1,22 +1,22 @@
 <template>
     <div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}">
         <div class="site-logo">
-            <a href="/">
+            <router-link to="/">
                 <img src="../../assets/site-logo.svg" alt="">
                 <p class="site-name">Gblog</p>
-            </a>
+            </router-link>
         </div>
         <div class="site-menus">
             <div class="menu-item header-search"><header-search/></div>
-            <div class="menu-item"><a href="/fishy">首页</a></div>
+            <div class="menu-item"><router-link to="/">首页</router-link></div>
             <div class="menu-item hasChild">
                 <a href="#">文章</a>
                 <div class="childMenu" v-if="category.length">
-                    <div class="sub-menu" v-for="item in category" :key="item.title"><a :href="item.href">{{item.title}}</a></div>
+                    <div class="sub-menu" v-for="item in category" :key="item.title"><router-link :to="`/category/${item.title}`">{{item.title}}</router-link></div>
                 </div>
             </div>
-            <div class="menu-item"><a href="#">友链</a></div>
-            <div class="menu-item"><a href="#">关于</a></div>
+            <div class="menu-item"><router-link to="/friend">友链</router-link></div>
+            <div class="menu-item"><router-link to="/about">关于</router-link></div>
         </div>
     </div>
 </template>
@@ -44,6 +44,10 @@
             }
         },
         created() {
+            // this.fetchCategory()
+            console.log('created header')
+        },
+        mounted(){
             this.fetchCategory()
         },
         methods: {
