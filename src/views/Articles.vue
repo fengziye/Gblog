@@ -7,7 +7,7 @@
                     <!-- 文章头部 -->
                     <header class="entry-header">
                         <!-- 标题输出 -->
-                        <h1 class="entry-title">公安联网备案记录</h1>
+                        <h1 class="entry-title">看一遍闭着眼都会安装Lua了</h1>
                         <hr>
                         <div class="breadcrumbs">
                             <div id="crumbs">最后更新时间：2020年04月21日</div>
@@ -62,16 +62,15 @@ yum -y install gcc-c++</code></pre>
 
                     </div>
                     <!-- 文章底部 -->
-                    <footer class="post-footer">
-                        <!-- 阅读次数 -->
-                        <div class="post-like">
-                            <a href="javascript:;" data-action="ding" data-id="58" class="specsZan ">
+                    <section-title>
+                        <footer class="post-footer">
+                            <!-- 阅读次数 -->
+                            <div class="post-like">
                                 <i class="iconfont iconeyes"></i>
                                 <span class="count">685</span>
-                            </a>
-                        </div>
-                        <!-- 分享按钮 -->
-                        <div class="post-share">
+                            </div>
+                            <!-- 分享按钮 -->
+                            <!--                        <div class="post-share">-->
                             <!--                            <ul class="sharehidden">-->
                             <!--                                <li><a href="http://qr.liantu.com/api.php?text=https://zhebk.cn/Web/gongan.html"-->
                             <!--                                       onclick="window.open(this.href, 'renren-share', 'width=490,height=700');return false;"-->
@@ -89,26 +88,29 @@ yum -y install gcc-c++</code></pre>
                             <!--                                       onclick="window.open(this.href, 'renren-share', 'width=490,height=600');return false;"-->
                             <!--                                       class="s-douban" target="_blank" rel="nofollow noopener noreferrer"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/douban.png"></a></li>-->
                             <!--                            </ul>-->
-                            <i class="iconfont show-share"></i>
-                        </div>
-                        <!-- 赞助按钮 -->
-                        <div class="donate">
-                            <a>赏</a>
-                            <ul class="donate_inner">
-                                <li class="wedonate"><img
-                                        src="https://cdn.zhebk.cn/usr/themes/Akina/images/donate/wedo.jpg">
-                                    <p>微信</p></li>
-                                <li class="alidonate"><img
-                                        src="https://cdn.zhebk.cn/usr/themes/Akina/images/donate/alido.jpg">
-                                    <p>支付宝</p></li>
-                            </ul>
-                        </div>
-                        <!-- 文章标签 -->
-                        <div class="post-tags">
-                            <i class="iconfont"></i>
-                            <a href="https://zhebk.cn/tag/Web/">Web</a>
-                        </div>
-                    </footer>
+                            <!--                            <i class="iconfont show-share"></i>-->
+                            <!--                        </div>-->
+                            <!-- 赞助按钮 -->
+                            <div class="donate" @click="showDonate=!showDonate">
+                                <span>赏</span>
+                                <ul class="donate_inner" :class="{'show':showDonate}">
+                                    <li class="wedonate"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/donate/wedo.jpg"><p>微信</p></li>
+                                    <li class="alidonate"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/donate/alido.jpg"><p>支付宝</p></li>
+                                </ul>
+                            </div>
+                            <!-- 文章标签 -->
+                            <div class="post-tags">
+                                <i class="iconfont iconcategory"></i>
+                                <router-link to="/category/web">Web</router-link>
+                            </div>
+                        </footer>
+                    </section-title>
+
+                    <!--声明-->
+                    <div class="open-message">
+                        <p>声明：Gblog博客|版权所有，违者必究|如未注明，均为原创|本网站采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="nofollow noopener noreferrer">BY-NC-SA</a>协议进行授权</p>
+                        <p>转载：转载请注明原文链接 - <a href="/">看一遍闭着眼都会安装Lua了</a></p>
+                    </div>
                 </article>
             </main>
         </div>
@@ -117,11 +119,17 @@ yum -y install gcc-c++</code></pre>
 
 <script>
     import Banner from '@/components/banner'
-
+    import sectionTitle from '@/components/section-title'
     export default {
         name: 'articles',
+        data(){
+          return{
+              showDonate: false
+          }
+        },
         components: {
-            Banner
+            Banner,
+            sectionTitle
         }
     }
 </script>
@@ -143,7 +151,7 @@ yum -y install gcc-c++</code></pre>
                 &:before {
                     content: "#";
                     margin-right: 6px;
-                    color: #ff6d6d;
+                    color: #d82e16;
                     font-size: 20px;
                     font-weight: 600;
                 }
@@ -164,19 +172,21 @@ yum -y install gcc-c++</code></pre>
             }
         }
 
-        .entry-content {
-
-
-        }
+        .entry-content {}
 
         footer.post-footer {
+            width: 100%;
             padding: 20px 10px;
             margin-top: 30px;
             height: 65px;
             position: relative;
-
+            i{
+                font-size: 18px;
+                margin-right: 5px;
+            }
             .post-like {
                 float: right;
+                margin: 7px 0 0 20px;
             }
 
             .post-share {
@@ -192,8 +202,13 @@ yum -y install gcc-c++</code></pre>
                 -webkit-border-radius: 100%;
                 -moz-border-radius: 100%;
                 border: 1px solid #2B2B2B;
-
-                a {
+                &:hover{
+                    border: 1px solid goldenrod;
+                    span{
+                        color: goldenrod;
+                    }
+                }
+                span {
                     color: #2B2B2B;
                     padding: 10px;
                     position: relative;
@@ -212,7 +227,9 @@ yum -y install gcc-c++</code></pre>
                     border: 1px solid #ddd;
                     box-shadow: 0 2px 6px rgba(0, 0, 0, .08);
                     border-radius: 3px;
-
+                    &.show{
+                        display: block;
+                    }
                     li {
                         float: left;
                     }
@@ -220,11 +237,11 @@ yum -y install gcc-c++</code></pre>
                     img {
                         width: 100px;
                     }
-
                     p {
                         text-align: center;
                         font-size: 15px;
                         color: #D2D2D2;
+                        line-height: 1rem;
                     }
                 }
 
@@ -249,10 +266,38 @@ yum -y install gcc-c++</code></pre>
             .post-tags {
                 margin: 7px 0 0 20px;
                 float: left;
-                font-size: 13px;
-                color: #B3B3B3;
                 text-transform: uppercase;
-                font-family: din, 'Hiragino Sans GB', 'Microsoft Yahei', Arial, sans-serif;
+                a:hover{
+                    color: #ff6d6d;
+                }
+            }
+        }
+        .open-message {
+            margin: 50px 0;
+            position: relative;
+            background: #2B2B2B;
+            padding: 10px 30px;
+            border-radius: 3px;
+            font-size: 14px;
+            color: #fff;
+            &:after {
+                content: "";
+                border-left: 10px solid transparent;
+                border-right: 10px solid transparent;
+                border-bottom: 10px solid #2B2B2B;
+                position: absolute;
+                top: -8px;
+                left: 48%;
+            }
+            p {
+                margin: 10px 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            a {
+                color: #A0DAD0;
+                padding: 0 5px;
             }
         }
     }

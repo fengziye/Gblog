@@ -64,25 +64,28 @@
 
 <style scoped lang="less">
     #layout-header {
+        position: fixed;
+        top: 0;
+        z-index: 9;
         width: 100%;
         height: 80px;
         padding: 0 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        transition: .7s all ease;
-        -webkit-transition: .6s all ease;
-        -moz-transition: .6s all linear;
-        -o-transition: .6s all ease;
-        -ms-transition: .6s all ease;
+        transition: .3s all ease;
+        -webkit-transition: .3s all ease;
+        -moz-transition: .3s all linear;
+        -o-transition: .3s all ease;
+        -ms-transition: .3s all ease;
         &.hidden{
-            position: fixed;
+            /*position: fixed;*/
             top: -100px;
         }
         &.fixed{
-            position: fixed;
-            z-index: 9;
-            top: 0;
+            /*position: fixed;*/
+            /*z-index: 9;*/
+            /*top: 0;*/
             background-color: #FFFFFF;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         }
@@ -130,7 +133,7 @@
                 font-weight: 500;
                 font-size: 16px;
                 &:hover {
-                    color: #d81e06;
+                    color: #ff6d6d;
                 }
             }
             &:not(:last-child) {
@@ -182,7 +185,7 @@
                     content: '';
                     width: 50%;
                     height: 1px;
-                    color: #d81e06;
+                    color: #ff6d6d;
                     bottom: 0;
                     left: 25%;
                     z-index: 99;

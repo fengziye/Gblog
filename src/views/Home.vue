@@ -1,14 +1,14 @@
 <template>
     <div class="home">
-        <banner></banner>
+        <banner isHome="true"></banner>
         <div class="site-content">
             <!--通知栏-->
-            <div class="notify" @click="isSearch=!isSearch">
+            <div class="notify">
                 <div class="search-result" v-if="hideSlogan">
                     <span v-if="searchWords">搜索结果："{{searchWords}}" 相关文章</span>
-                    <span v-if="category">分类 "{{category}}" 相关文章</span>
+                    <span v-else-if="category">分类 "{{category}}" 相关文章</span>
                 </div>
-                <quote class="slogan" v-else>The way up is not crowded, and most chose ease.</quote>
+                <quote v-else>The way up is not crowded, and most chose ease.</quote>
             </div>
 
             <!--焦点图-->
@@ -98,15 +98,11 @@
         .notify {
             margin: 60px 0;
             border-radius: 3px;
-
             & > div {
                 padding: 20px;
             }
         }
 
-        /*.slogan {*/
-        /*    background-color: #FBFBFB;*/
-        /*}*/
 
         .search-result {
             padding: 15px 20px;

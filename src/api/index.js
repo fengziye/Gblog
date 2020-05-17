@@ -23,3 +23,11 @@ export function fetchCategory() {
         params: {}
     })
 }
+
+export function fetchFriend() {
+    return request({
+        url: '/friend',
+        method: 'get',
+        params: {}
+    })
+}

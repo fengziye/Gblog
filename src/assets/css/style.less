@@ -26,24 +26,31 @@
 ::-webkit-scrollbar-track {
   background-color: #ffffff;
 }
+@keyframes main {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .site-content {
   margin: 0 auto;
   padding: 0 10px;
   max-width: 800px;
+  animation: main 1.5s;
+}
+@media (max-width: 800px){
+  .site-content {
+    animation:none;
+    padding: 50px 4% 0 4%;
+  }
 }
 /**文章样式**/
 .entry-content{
-  //::-webkit-scrollbar {
-  //  width: 5px;
-  //  height: 5px;
-  //}
-  //::-webkit-scrollbar-thumb {
-  //  border-radius: 10px;
-  //  background-color: #A0DAD0;
-  //}
-  //::-webkit-scrollbar-track {
-  //  background-color: #ffffff;
-  //}
 
   /* BLOCKS
   =============================================================================*/
@@ -58,6 +65,14 @@
     color: #4f4f4f;
     margin: 8px 0 16px;
     font-weight: 700;
+    &:before{
+      content: '「 ';
+      color: #ff6d6d;
+    }
+    &:after{
+      content: ' 」';
+      color: #ff6d6d;
+    }
   }
 
   h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
@@ -135,11 +150,11 @@
   }
 
   dl dt>:first-child {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   dl dt>:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   dl dd {
@@ -148,11 +163,11 @@
   }
 
   dl dd>:first-child {
-    margin-top: 0px;
+    margin-top: 0;
   }
 
   dl dd>:last-child {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   /* CODE
@@ -180,7 +195,6 @@
     color: #333;
     border: none;
     background: transparent;
-
   }
 
   pre {
@@ -201,7 +215,8 @@
 
   blockquote {
     border-left: 4px solid #A0DAD0;
-    background-color: #F0F0F0;
+    background-color: #ebeef5;
+    border-radius: 3px;
     padding: 15px 20px;
     margin: 15px 0;
     color: #777;
@@ -266,6 +281,13 @@
   /**
   =============================================================================*/
   @media (max-width: 800px) {
-
+    ul, ol {
+      padding-left: 10px;
+      margin: 0;
+      li{
+        list-style: inside;
+        margin: 0;
+      }
+    }
   }
 }

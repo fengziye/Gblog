@@ -2,7 +2,7 @@
     <div id="layout-footer">
         <div class="footer-main">
             <div class="footer-item">
-                <div><a target="_blank" class="out-link" href="http://wpa.qq.com/msgrd?v=3&amp;uin=122497566&amp;site=qq&amp;menu=yes"><i class="iconfont iconqq"></i>QQ</a></div>
+                <div><a target="_blank" class="out-link" href="http://wpa.qq.com/msgrd?v=3&uin=122497566&site=qq&menu=yes"><i class="iconfont iconqq"></i>QQ</a></div>
                 <div><a target="_blank" class="out-link" href="https://gitee.com/fengziy"><i class="iconfont icongitee"></i>Gitee</a></div>
                 <div><a target="_blank" class="out-link" href="https://github.com/fengziye"><i class="iconfont icongithub"></i>GitHub</a></div>
                 <div><a target="_blank" class="out-link" href="https://blog.csdn.net/feng_zi_ye"><i class="iconfont iconcsdn"></i>CSDN</a></div>
@@ -39,7 +39,7 @@
     font-size: 13px;
     color: #9c9c9c;
     a.out-link:hover{
-        color: #d82e16;
+        color: #ff6d6d;
     }
     .footer-main{
         max-width: 800px;
