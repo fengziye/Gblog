@@ -11,8 +11,13 @@ const routes = [
         component: () => import('../views/Home.vue')
     },
     {
-        path: '/category/:key',
+        path: '/category/:cate',
         name: 'category',
+        component: () => import('../views/Home.vue')
+    },
+    {
+        path: '/search/:words',
+        name: 'search',
         component: () => import('../views/Home.vue')
     },
     {
@@ -48,7 +53,7 @@ const routes = [
     {
         path: '/article/:id',
         name: 'article',
-        component: () => import('../views/Article.vue')
+        component: () => import('../views/Articles.vue')
     }
 ]
 

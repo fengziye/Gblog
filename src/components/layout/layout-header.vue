@@ -146,6 +146,7 @@
             width: 130px;
             background-color: #FDFDFD;
             border-radius: 3px;
+            border: 1px solid #ddd;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
             position: absolute;
             top: 55px;
@@ -157,7 +158,7 @@
             -moz-transition: .6s all linear;
             -o-transition: .6s all ease;
             -ms-transition: .6s all ease;
-            &:before{
+            &:before,&:after{
                 content: '';
                 position: absolute;
                 width: 0;
@@ -167,6 +168,10 @@
                 border-bottom: 8px solid white;
                 top: -8px;
                 left: 20px;
+            }
+            &:before {
+                top: -9px;
+                border-bottom: 8px solid #ddd;
             }
             .sub-menu{
                 height: 40px;

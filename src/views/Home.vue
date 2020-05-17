@@ -5,15 +5,17 @@
             <!--通知栏-->
             <div class="notify" @click="isSearch=!isSearch">
                 <div class="search-result" v-if="hideSlogan">
-                    <span v-if="isSearch">搜索结果："Web" 相关文章</span>
-                    <span v-if="isCategory">分类 "Web" 相关文章</span>
+                    <span v-if="searchWords">搜索结果："{{searchWords}}" 相关文章</span>
+                    <span v-if="category">分类 "{{category}}" 相关文章</span>
                 </div>
                 <quote class="slogan" v-else>The way up is not crowded, and most chose ease.</quote>
             </div>
 
             <!--焦点图-->
             <div class="top-feature" v-if="!hideSlogan">
-                <section-title>聚焦<small-ico></small-ico></section-title>
+                <section-title>聚焦
+                    <small-ico></small-ico>
+                </section-title>
                 <div class="feature-content">
                     <div class="feature-item" v-for="item in features" :key="item.title">
                         <Feature :data="item"></Feature>
@@ -38,13 +40,13 @@
     import Post from '@/components/post'
     import SmallIco from '@/components/small-ico'
     import Quote from '@/components/quote'
-    import {fetchFocus,fetchList} from '../api'
+    import {fetchFocus, fetchList} from '../api'
+
     export default {
         name: 'Home',
+        props: ['cate', 'words'],
         data() {
             return {
-                isSearch: false,
-                isCategory: false,
                 features: [],
                 postList: []
             }
@@ -58,22 +60,28 @@
             Quote
         },
         computed: {
-          hideSlogan(){
-            return this.isSearch || this.isCategory
-          }
+            searchWords() {
+                return this.$route.params.words
+            },
+            category() {
+                return this.$route.params.cate
+            },
+            hideSlogan() {
+                return this.category || this.searchWords
+            }
         },
         methods: {
-            fetchFocus(){
+            fetchFocus() {
                 fetchFocus().then(res => {
                     this.features = res.data || []
                 }).catch(err => {
                     console.log(err)
                 })
             },
-            fetchList(){
-                fetchList().then(res=>{
+            fetchList() {
+                fetchList().then(res => {
                     this.postList = res.data.items || []
-                }).catch(err=>{
+                }).catch(err => {
                     console.log(err)
                 })
             }
@@ -134,23 +142,28 @@
             padding-top: 0;
         }
     }
+
     /******/
     @media (max-width: 800px) {
         .top-feature {
             display: none;
         }
+
         .site-main {
             padding-top: 40px;
         }
+
         .site-content {
             .notify {
                 margin: 30px 0 0 0;
             }
+
             .search-result {
                 margin-bottom: 20px;
                 font-size: 16px;
             }
         }
     }
+
     /******/
 </style>
