@@ -1,9 +1,9 @@
 const Mock = require('mockjs');
-const List = []
 const count = 100
 
 const baseContent = '<p>I am testing data, I am testing data.</p><p><img src="https://wpimg.wallstcn.com/4c69009c-0fd4-4153-b112-6cb53d1cf943"></p>'
 const image_uri = 'https://wpimg.wallstcn.com/e4558086-631c-425c-9430-56ffb46e70b3'
+
 const banners = [
     'https://s1.ax1x.com/2020/05/14/YDhagx.jpg',
     'https://s1.ax1x.com/2020/05/14/YDhU81.jpg',
@@ -11,11 +11,22 @@ const banners = [
     'https://s1.ax1x.com/2020/05/14/YDhoVg.jpg',
     'https://s1.ax1x.com/2020/05/14/YD4FR1.jpg'
 ]
+const List = [{
+    id: 0,
+    isTop: true,
+    banner: banners[0],
+    isHot: true,
+    pubTime: +Mock.Random.date('T'),
+    title: '看一遍闭着眼都会安装Lua了',
+    summary: 'Lua 是一种轻量小巧的脚本语言，能为应用程序提供灵活的扩展和定制功能。',
+    content: '',
+    viewsCount: 4045,
+    commentsCount: 99
+}]
 for (let i = 0; i < count; i++) {
     List.push(Mock.mock({
         id: '@increment',
         'isTop|1-4': true,
-        path: 'https://zhebk.cn/Web/Akina.html',
         'banner|+1': banners,
         'isHot|1-3': true,
         pubTime: +Mock.Random.date('T'),
