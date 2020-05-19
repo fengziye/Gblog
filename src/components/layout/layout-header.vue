@@ -79,13 +79,9 @@
         -o-transition: .3s all ease;
         -ms-transition: .3s all ease;
         &.hidden{
-            /*position: fixed;*/
             top: -100px;
         }
         &.fixed{
-            /*position: fixed;*/
-            /*z-index: 9;*/
-            /*top: 0;*/
             background-color: #FFFFFF;
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         }

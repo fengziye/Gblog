@@ -1,7 +1,7 @@
 <template>
     <div class="home">
         <banner isHome="true"></banner>
-        <div class="site-content">
+        <div class="site-content animate">
             <!--通知栏-->
             <div class="notify">
                 <div class="search-result" v-if="hideSlogan">

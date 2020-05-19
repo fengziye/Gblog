@@ -1,7 +1,7 @@
 <template>
     <div class="articles">
         <banner></banner>
-        <div class="site-content">
+        <div class="site-content animate">
             <main class="site-main">
                 <article class="hentry">
                     <!-- 文章头部 -->

@@ -14,7 +14,7 @@
                 <div><a target="_blank" class="out-link" href="https://www.liaoxuefeng.com/">廖雪峰的官方网站</a></div>
             </div>
             <div class="footer-item">
-                <div>本站已稳定运行 123 天 4 时 36 分 22 秒</div>
+                <div>本站已苟活 {{runTimeInterval}}</div>
                 <div><a target="_blank" class="out-link" href="http://www.beian.miit.gov.cn">渝ICP备17015355号-1</a></div>
             </div>
         </div>
@@ -28,6 +28,14 @@
         name: "layout-footer",
         components:{
             sectionTitle
+        },
+        computed:{
+            runTimeInterval() {
+                return this.$store.state.runTimeInterval;
+            }
+        },
+        created(){
+            this.$store.dispatch('initComputeTime');
         }
     }
 </script>

@@ -41,6 +41,8 @@
   margin: 0 auto;
   padding: 0 10px;
   max-width: 800px;
+}
+.animate{
   animation: main 1.5s;
 }
 @media (max-width: 800px){
@@ -65,14 +67,28 @@
     color: #4f4f4f;
     margin: 8px 0 16px;
     font-weight: 700;
-    &:before{
-      content: '「 ';
-      color: #ff6d6d;
+    position: relative;
+    &:hover{
+      &:before {
+        left: -28px;
+        position: absolute;
+        content: '「 ';
+        color: #ff6d6d;
+      }
+      &:after{
+        //position: absolute;
+        content: ' 」';
+        color: #ff6d6d;
+      }
     }
-    &:after{
-      content: ' 」';
-      color: #ff6d6d;
-    }
+    //&:before{
+    //  content: '「 ';
+    //  color: #ff6d6d;
+    //}
+    //&:after{
+    //  content: ' 」';
+    //  color: #ff6d6d;
+    //}
   }
 
   h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {

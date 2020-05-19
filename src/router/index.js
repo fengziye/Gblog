@@ -63,13 +63,13 @@ const router = new VueRouter({
     routes
 })
 router.beforeEach((to, from, next) => {
-    store.commit('SET_LOADING', true);
+    store.dispatch('setLoading', true);
     next();
 })
 router.afterEach((to, from) => {
     // 最多延迟 3s 关闭 loading
     // setTimeout(() => {
-        store.commit('SET_LOADING', false);
+        store.dispatch('setLoading', false);
     // }, 3000)
 })
 export default router

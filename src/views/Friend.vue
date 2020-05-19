@@ -4,12 +4,12 @@
             <section-title>
                 <div class="friend-header">
                     <div class="title">友链</div>
-                    <div class="apply"><router-link to="/category/web">+ 加入</router-link></div>
+                    <div class="apply"><router-link to="/about#Guestbook">+ 加入</router-link></div>
                 </div>
             </section-title>
             <!---说明--->
             <div class="statement">
-                <p>首先将需要接入本博客站点，然后给我<router-link to="/category/web">留言</router-link>提供您站点的如下信息：</p>
+                <p>首先将需要接入本博客站点，然后给我<router-link to="/about#Guestbook">留言</router-link>提供您站点的如下信息：</p>
                 <quote>
                     <p>站点名称：FZY′blog</p>
                     <p>站点链接：https://www.fengziy.cn</p>
@@ -19,7 +19,7 @@
             </div>
             <!----->
             <hr/>
-            <div class="friend-list">
+            <div class="friend-list animate">
                 <div class="friend-item" v-for="item in list" :key="item.id"><a target="_blank" :href="item.path"><div class="site-name">{{item.siteName}}</div><div class="site-detail">{{item.desc}}</div></a></div>
             </div>
         </div>
