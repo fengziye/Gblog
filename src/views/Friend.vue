@@ -11,9 +11,9 @@
             <div class="statement">
                 <p>首先将需要接入本博客站点，然后给我<router-link to="/about#Guestbook">留言</router-link>提供您站点的如下信息：</p>
                 <quote>
-                    <p>站点名称：FZY′blog</p>
-                    <p>站点链接：https://www.fengziy.cn</p>
-                    <p>简短描述：一个It技术的探索者</p>
+                    <p>站点名称：{{websiteInfo.name}}</p>
+                    <p>站点链接：{{websiteInfo.domain}}</p>
+                    <p>简短描述：{{websiteInfo.desc}}</p>
                 </quote>
                 <p>接入成功后将会以邮件的方式通知。</p>
             </div>
@@ -34,6 +34,7 @@
         name: "Friend",
         data(){
           return{
+              websiteInfo: {},
               list: []
           }
         },
@@ -48,9 +49,15 @@
                 }).catch(err => {
                     console.log(err)
                 })
+            },
+            getWebSiteInfo(){
+                this.$store.dispatch('getSiteInfo').then(data =>{
+                    this.websiteInfo = data
+                })
             }
         },
         mounted() {
+            this.getWebSiteInfo();
             this.fetchFriend();
         }
     }

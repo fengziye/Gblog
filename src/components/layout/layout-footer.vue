@@ -1,11 +1,8 @@
 <template>
     <div id="layout-footer">
         <div class="footer-main">
-            <div class="footer-item">
-                <div><a target="_blank" class="out-link" href="http://wpa.qq.com/msgrd?v=3&uin=122497566&site=qq&menu=yes"><i class="iconfont iconqq"></i>QQ</a></div>
-                <div><a target="_blank" class="out-link" href="https://gitee.com/fengziy"><i class="iconfont icongitee"></i>Gitee</a></div>
-                <div><a target="_blank" class="out-link" href="https://github.com/fengziye"><i class="iconfont icongithub"></i>GitHub</a></div>
-                <div><a target="_blank" class="out-link" href="https://blog.csdn.net/feng_zi_ye"><i class="iconfont iconcsdn"></i>CSDN</a></div>
+            <div class="footer-item" v-if="socials.length">
+                <div v-for="item in socials" :key="item.id"><a target="_blank" class="out-link" :href="item.href"><i class="iconfont" :class="item.icon"></i>{{item.title}}</a></div>
             </div>
             <div class="footer-item">
                 <div style="font-size:17px;font-weight: bold;">资源</div>
@@ -26,6 +23,11 @@
     import sectionTitle from '@/components/section-title'
     export default {
         name: "layout-footer",
+        data(){
+            return{
+                socials: []
+            }
+        },
         components:{
             sectionTitle
         },
@@ -34,7 +36,15 @@
                 return this.$store.state.runTimeInterval;
             }
         },
+        methods:{
+            getSocial(){
+                this.$store.dispatch('getSocials').then(data =>{
+                    this.socials = data
+                })
+            },
+        },
         created(){
+            this.getSocial();
             this.$store.dispatch('initComputeTime');
         }
     }

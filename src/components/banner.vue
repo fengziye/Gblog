@@ -6,17 +6,15 @@
                 <div class="focusinfo">
                     <!-- 头像 -->
                     <div class="header-tou">
-                        <a href="https://zhebk.cn/"><img src="//q.qlogo.cn/g?b=qq&amp;nk=945203919&amp;s=160"></a>
+                        <a href="https://zhebk.cn/"><img :src="websiteInfo.avatar"></a>
                     </div>
                     <!-- 简介 -->
                     <div class="header-info">
-                        <p>The way up is not crowded, and most chose ease.</p>
+                        <p>{{websiteInfo.slogan}}</p>
                     </div>
                     <!-- 社交信息 -->
                     <div class="top-social">
-                        <li class="qq"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=945203919&amp;site=qq&amp;menu=yes" target="_blank" rel="nofollow noopener noreferrer"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/qq.png"></a></li>
-                        <li><a href="https://github.com/Zisbusy" target="_blank" rel="nofollow noopener noreferrer" class="social-github"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/github.png"></a></li>
-                        <li><a href="https://space.bilibili.com/86455197" target="_blank" rel="nofollow noopener noreferrer" class="social-bilibili"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/bilibili.png"></a></li>
+                        <div v-for="item in socials" :key="item.id" :title="item.title"><a :href="item.href" target="_blank" :style="{'color':item.color}"><i class="iconfont" :class="item.icon"></i></a></div>
                     </div>
                 </div>
                 <!--左右倾斜-->
@@ -30,9 +28,14 @@
 <script>
     export default {
         name: "banner",
+        data(){
+            return{
+                websiteInfo: {},
+                socials: []
+            }
+        },
         props:{
             src:{
-                // https://s1.ax1x.com/2020/05/14/YDfxNd.jpg
                 type: String,
                 default: 'https://cdn.zhebk.cn/usr/themes/Akina/images/headerbg.jpg'
             },
@@ -41,7 +44,21 @@
                 default: false
             }
         },
+        created(){
+            this.getWebSiteInfo()
+            this.getSocial()
+        },
         methods:{
+            getSocial(){
+                this.$store.dispatch('getSocials').then(data =>{
+                    this.socials = data
+                })
+            },
+            getWebSiteInfo(){
+                this.$store.dispatch('getSiteInfo').then(data =>{
+                    this.websiteInfo = data
+                })
+            }
         }
     }
 </script>
@@ -124,14 +141,15 @@
             list-style: none;
             display: inline-block;
             font-family: miranafont,"Hiragino Sans GB",STXihei,"Microsoft YaHei",SimSun,sans-serif;
-            li {
+            div {
                 float: left;
                 margin-right: 10px;
-            }
-            img {
                 height: 32px;
+                line-height: 32px;
+                text-align: center;
                 width: 32px;
                 background: white;
+                border-radius: 100%;
             }
         }
     }

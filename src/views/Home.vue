@@ -8,7 +8,7 @@
                     <span v-if="searchWords">搜索结果："{{searchWords}}" 相关文章</span>
                     <span v-else-if="category">分类 "{{category}}" 相关文章</span>
                 </div>
-                <quote v-else>本博客的Demo数据由Mockjs生成</quote>
+                <quote v-else>{{notice}}</quote>
             </div>
 
             <!--焦点图-->
@@ -68,6 +68,9 @@
             },
             hideSlogan() {
                 return this.category || this.searchWords
+            },
+            notice() {
+                return this.$store.getters.notice
             }
         },
         methods: {

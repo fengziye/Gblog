@@ -1,5 +1,7 @@
 # gblog
-vue+element-ui+vuex+mock+github
+vue+element-ui+vuex+mock+github  
+todo:  
+- 文章详情内容接口
 ## Project setup
 ```
 npm install
