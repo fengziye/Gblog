@@ -1,7 +1,16 @@
 # gblog
-vue+element-ui+vuex+mock+github  
-todo:  
-- 文章详情内容接口
+
+- [x] 搜索
+- [ ] 评论
+- [x] 分类/分类文章
+- [x] 主页
+- [x] 文章列表
+- [x] 文章详情
+- [x] 友链
+- [x] 关于页/留言/申请友链
+- [x] 站点运行时间
+- [ ] 点击特效
+- [ ] 第三方登录
 ## Project setup
 ```
 npm install
