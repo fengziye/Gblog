@@ -35,18 +35,12 @@
 </template>
 
 <script>
-    import {parseTime} from '../utils'
 
     export default {
         name: "post",
         props: {
             post: {
                 type: Object
-            }
-        },
-        filters: {
-            parseTime(v) {
-                return parseTime(v, '{y}-{m}-{d}');
             }
         }
     }

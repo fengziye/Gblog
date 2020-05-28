@@ -111,6 +111,14 @@ yum -y install gcc-c++</code></pre>
                         <p>声明：Gblog博客|版权所有，违者必究|如未注明，均为原创|本网站采用<a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="nofollow noopener noreferrer">BY-NC-SA</a>协议进行授权</p>
                         <p>转载：转载请注明原文链接 - <a href="/">看一遍闭着眼都会安装Lua了</a></p>
                     </div>
+                    <!--评论-->
+                    <div class="comments">
+                        <comment v-for="item in comments" :key="item.comment.id" :comment="item.comment">
+                            <template v-if="item.reply.length">
+                                <comment v-for="reply in item.reply" :key="reply.id" :comment="reply"></comment>
+                            </template>
+                        </comment>
+                    </div>
                 </article>
             </main>
         </div>
@@ -120,16 +128,33 @@ yum -y install gcc-c++</code></pre>
 <script>
     import Banner from '@/components/banner'
     import sectionTitle from '@/components/section-title'
+    import comment from '@/components/comment'
+    import {fetchComment} from '../api'
     export default {
         name: 'articles',
         data(){
           return{
-              showDonate: false
+              showDonate: false,
+              comments: []
           }
         },
         components: {
             Banner,
-            sectionTitle
+            sectionTitle,
+            comment
+        },
+        methods: {
+          getComment(){
+              fetchComment().then(res => {
+                  this.comments = res.data || []
+                  console.log(res.data)
+              }).catch(err => {
+                  console.log(err)
+              })
+          }
+        },
+        created() {
+            this.getComment()
         }
     }
 </script>

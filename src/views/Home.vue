@@ -13,8 +13,8 @@
 
             <!--焦点图-->
             <div class="top-feature" v-if="!hideSlogan">
-                <section-title>聚焦
-                    <small-ico></small-ico>
+                <section-title>
+                    <div style="display: flex;align-items: flex-end;">聚焦<small-ico></small-ico></div>
                 </section-title>
                 <div class="feature-content">
                     <div class="feature-item" v-for="item in features" :key="item.title">
