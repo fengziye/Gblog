@@ -147,7 +147,6 @@ yum -y install gcc-c++</code></pre>
           getComment(){
               fetchComment().then(res => {
                   this.comments = res.data || []
-                  console.log(res.data)
               }).catch(err => {
                   console.log(err)
               })

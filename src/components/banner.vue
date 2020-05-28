@@ -6,7 +6,7 @@
                 <div class="focusinfo">
                     <!-- 头像 -->
                     <div class="header-tou">
-                        <a href="https://zhebk.cn/"><img :src="websiteInfo.avatar"></a>
+                        <a href="/"><img :src="websiteInfo.avatar"></a>
                     </div>
                     <!-- 简介 -->
                     <div class="header-info">
@@ -37,7 +37,7 @@
         props:{
             src:{
                 type: String,
-                default: 'https://cdn.zhebk.cn/usr/themes/Akina/images/headerbg.jpg'
+                default: 'https://s1.ax1x.com/2020/05/23/YxaLMq.jpg'
             },
             isHome:{
                 type: [Boolean,String],

@@ -10,7 +10,7 @@
                     </div>
                     <div style="font-size: 13px;">
                         <span style="color: #9c9c9c;margin-right: 20px;">{{comment.createTime | parseTime}}</span>
-                        <span><a href="#">回复</a></span>
+                        <span @click="reply(comment.id)" style="cursor: pointer;">回复</span>
                     </div>
                 </div>
             </section-title>
@@ -18,6 +18,7 @@
                 <div class="content-text">
                     <p>{{comment.content}}</p>
                 </div>
+                <div :ref="`comment${comment.id}`"></div>
                 <slot></slot>
             </div>
         </div>
@@ -35,6 +36,12 @@
         },
         components: {
             sectionTitle
+        },
+        methods: {
+            reply(id){
+                const ref = `comment${id}`
+                this.$refs[ref].innerHTML= '123'
+            }
         }
     }
 </script>

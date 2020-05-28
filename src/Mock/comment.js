@@ -11,11 +11,11 @@ function getComment(count) {
     let List = [];
     mockComment(count,null).map(item => {
         let count = 1 + ~~(Math.random() * 5)
-        List.push({comment: item,reply: mockComment(count,item.id)})
+        List.push({comment: item,reply: mockComment(count,item.id,item.fromUserName)})
     })
     return List;
 }
-function mockComment(count,id) {
+function mockComment(count,id,userName) {
     let List = [];
     for (let i = 0; i < count; i++) {
         List.push(Mock.mock({
@@ -28,7 +28,7 @@ function mockComment(count,id) {
             content: '@ctitle(20,50)',
             createTime: +Mock.Random.date('T'),
             toUserId: id,
-            toUserName: '@cname',
+            toUserName: userName||'@cname',
             'toUserAvatar|+1': banners,
         }))
     }

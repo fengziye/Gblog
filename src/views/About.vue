@@ -4,7 +4,13 @@
             <div class="content-warp">
                 <div class="about-site about-info">
                     <section-title><span>❤</span>关于博客</section-title>
-                    <div class="info-card"></div>
+                    <div class="info-card">
+                        <p>本博客用来分享一些技术类的文章，以及记录一些自己的想法。。</p>
+                        <p>博主呢是一个热爱技术喜爱钻研的这么个人。</p>
+                        <p>很早就有搭建个人博客的想法，一直没空（额，好吧就是懒！）。之前都有搭建一半的残品，自己也感到不是很满意，觉得用那些大平台比如 CSDN、简书也不错呀。</p>
+                        <p>后来呢偶然之间看见了<a target="_blank" class="out-link" href="https://zhebk.cn/Web/Akina.html">Akina For Typecho</a>博客的主题，风格很是喜欢。</p>
+                        <p>然后就开始用Vue搭建这种风格的博客，在此呢也将这套模板开放给大家。</p>
+                    </div>
                 </div>
                 <div class="about-me about-info">
                     <section-title id="Guestbook"><span>❤</span>给我留言</section-title>
@@ -72,6 +78,9 @@
                 border-radius: 3px;
                 margin: 30px 0 50px 0;
                 box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+                p{
+                    line-height: 1.7rem;
+                }
             }
         }
         .contactForm{
