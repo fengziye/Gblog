@@ -76,6 +76,12 @@
             background-position: center;
             background-size: cover;
             background-repeat: no-repeat;
+            transition: all 0.2s linear;
+            overflow: hidden;
+            &:hover {
+                transform: scale(1.1, 1.1);
+                filter: contrast(130%);
+            }
         }
         &.home-banner {
             height: 550px;
@@ -85,6 +91,11 @@
                 background-attachment: fixed;
                 background-size: cover;
                 z-index: -1;
+                transition: unset;
+                &:hover {
+                    transform: unset;
+                    filter: unset;
+                }
             }
             .slant-left {
                 content: '';
