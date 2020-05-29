@@ -10,7 +10,7 @@
                     </div>
                     <div style="font-size: 13px;">
                         <span style="color: #9c9c9c;margin-right: 20px;">{{comment.createTime | parseTime}}</span>
-                        <span @click="reply(comment.id)" style="cursor: pointer;">回复</span>
+                        <span @click.stop="showCommentEditor=true" style="cursor: pointer;">回复</span>
                     </div>
                 </div>
             </section-title>
@@ -18,7 +18,9 @@
                 <div class="content-text">
                     <p>{{comment.content}}</p>
                 </div>
-                <div :ref="`comment${comment.id}`"></div>
+                <div v-if="showCommentEditor" @click.stop="">
+                    <comment-message-editor :inline="true" buttonText="回复" @submit="submitReply"></comment-message-editor>
+                </div>
                 <slot></slot>
             </div>
         </div>
@@ -27,6 +29,7 @@
 
 <script>
     import sectionTitle from '@/components/section-title'
+    import commentMessageEditor from 'comment-message-editor'
     export default {
         name: "comment",
         props: {
@@ -34,13 +37,33 @@
               type: Object
           }
         },
+        data(){
+          return{
+              showCommentEditor: false
+          }
+        },
+        watch:{
+            showCommentEditor(value) {
+                if (value) {
+                    document.body.addEventListener('click', this.close)
+                } else {
+                    document.body.removeEventListener('click', this.close)
+                }
+            }
+        },
         components: {
-            sectionTitle
+            sectionTitle,
+            commentMessageEditor
         },
         methods: {
             reply(id){
                 const ref = `comment${id}`
-                this.$refs[ref].innerHTML= '123'
+            },
+            submitReply(v){
+                console.log(v)
+            },
+            close(){
+                this.showCommentEditor = false
             }
         }
     }
