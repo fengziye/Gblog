@@ -9,9 +9,6 @@
   <a href="https://github.com/fengziye/Gblog/blob/master/license">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
   </a>
-  <a href="#donate">
-    <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate"/>
-  </a>
 </p>
 
 仓库：[码云](https://gitee.com/fengziy/Gblog) | [github](https://github.com/fengziye/Gblog)  
