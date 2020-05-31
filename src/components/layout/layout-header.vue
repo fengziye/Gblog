@@ -2,7 +2,7 @@
     <div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}">
         <div class="site-logo">
             <router-link to="/">
-                <img src="../../assets/site-logo.svg" alt="">
+                <img src="@/assets/site-logo.svg" alt="">
                 <p class="site-name">Gblog</p>
             </router-link>
         </div>
@@ -24,33 +24,38 @@
 <script>
     import HeaderSearch from '@/components/header-search'
     import {fetchCategory} from '../../api'
-
     export default {
         name: "layout-header",
         components: {HeaderSearch},
-        props: {
-            fixed: {
-                type: Boolean,
-                default: false
-            },
-            hidden: {
-                type: Boolean,
-                default: false
-            }
-        },
         data() {
             return {
+                lastScrollTop: 0,
+                fixed: false,
+                hidden: false,
                 category: []
             }
         },
-        created() {
-            // this.fetchCategory()
-            console.log('created header')
-        },
         mounted(){
+            window.addEventListener('scroll', this.watchScroll)
             this.fetchCategory()
         },
+        beforeDestroy () {
+            window.removeEventListener("scroll", this.watchScroll)
+        },
         methods: {
+            watchScroll() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+                if (scrollTop===0){
+                    this.fixed = false;
+                } else if (scrollTop>=this.lastScrollTop){
+                    this.fixed = false;
+                    this.hidden = true;
+                } else {
+                    this.fixed = true
+                    this.hidden = false
+                }
+                this.lastScrollTop = scrollTop
+            },
             fetchCategory() {
                 fetchCategory().then(res => {
                     this.category = res.data

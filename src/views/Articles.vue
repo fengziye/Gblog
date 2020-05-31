@@ -94,8 +94,8 @@ yum -y install gcc-c++</code></pre>
                             <div class="donate" @click="showDonate=!showDonate">
                                 <span>赏</span>
                                 <ul class="donate_inner" :class="{'show':showDonate}">
-                                    <li class="wedonate"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/donate/wedo.jpg"><p>微信</p></li>
-                                    <li class="alidonate"><img src="https://cdn.zhebk.cn/usr/themes/Akina/images/donate/alido.jpg"><p>支付宝</p></li>
+                                    <li class="wedonate"><img src="http://cdn.fengziy.cn/gblog/wexin_pay.png"><p>微信</p></li>
+                                    <li class="alidonate"><img src="http://cdn.fengziy.cn/gblog/ali_pay.jpg"><p>支付宝</p></li>
                                 </ul>
                             </div>
                             <!-- 文章标签 -->

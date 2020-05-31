@@ -29,6 +29,11 @@
                     <post :post="item" :key="item.id"></post>
                 </template>
             </main>
+
+            <!--加载更多-->
+            <div class="more" v-show="hasNextPage">
+                <div class="more-btn" @click="loadMore">More</div>
+            </div>
         </div>
     </div>
 </template>
@@ -48,7 +53,9 @@
         data() {
             return {
                 features: [],
-                postList: []
+                postList: [],
+                currPage: 1,
+                hasNextPage: false
             }
         },
         components: {
@@ -84,8 +91,17 @@
             fetchList() {
                 fetchList().then(res => {
                     this.postList = res.data.items || []
+                    this.currPage = res.data.page
+                    this.hasNextPage = res.data.hasNextPage
                 }).catch(err => {
                     console.log(err)
+                })
+            },
+            loadMore() {
+                fetchList({page:this.currPage+1}).then(res => {
+                    this.postList = this.postList.concat(res.data.items || [])
+                    this.currPage = res.data.page
+                    this.hasNextPage = res.data.hasNextPage
                 })
             }
         },
@@ -139,6 +155,25 @@
 
         &.search {
             padding-top: 0;
+        }
+    }
+
+    .more{
+        margin: 50px 0;
+        .more-btn{
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            color: #ADADAD;
+            border: 1px solid #ADADAD;
+            border-radius: 20px;
+            margin: 0 auto;
+            cursor: pointer;
+            &:hover{
+                color: #8fd0cc;
+                border: 1px dashed #8fd0cc;
+            }
         }
     }
 

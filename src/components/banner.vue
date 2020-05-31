@@ -6,7 +6,7 @@
                 <div class="focusinfo">
                     <!-- 头像 -->
                     <div class="header-tou">
-                        <a href="/"><img :src="websiteInfo.avatar"></a>
+                        <router-link to="/"><img :src="websiteInfo.avatar"></router-link>
                     </div>
                     <!-- 简介 -->
                     <div class="header-info">

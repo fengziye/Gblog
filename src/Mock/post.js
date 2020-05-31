@@ -43,13 +43,18 @@ export default [
         url: '/post/list',
         type: 'get',
         response: config => {
-            let {page = 1, limit = 10} = config.query;
-            const pageList = List.filter((item, index) => index < limit * page && index >= limit * (page - 1));
+            let {page = 1, size = 10} = config.query;
+            page = page instanceof Number ? page : parseInt(page)
+            size = size instanceof Number ? size : parseInt(size)
+            const pageList = List.filter((item, index) => index < size * page && index >= size * (page - 1));
             return {
                 code: 20000,
                 data: {
                     total:List.length,
-                    items:pageList.sort((a,b)=>a.isTop===b.isTop?0:a.isTop?-1:1)
+                    items:pageList.sort((a,b)=>a.isTop===b.isTop?0:a.isTop?-1:1),
+                    hasNextPage: page * size < List.length,
+                    page: page,
+                    size: size
                 }
             }
         }

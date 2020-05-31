@@ -38,7 +38,7 @@ service.interceptors.response.use(
      */
     response => {
         const res = response.data
-        store.commit('SET_LOADING',false);
+        // store.commit('SET_LOADING',false);
 
         // if the custom code is not 20000, it is judged as an error.
         if (res.code !== 20000) {
