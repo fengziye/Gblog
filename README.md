@@ -1,16 +1,16 @@
 # gblog
 <p align="center">
-  <img width="80" src="http://cdn.fengziy.cn/gblog/logo.svg">
+  <img width="80" src="http://cdn.fengziy.cn/gblog/logo.svg"/>
 </p>
 <p align="center">
   <a href="https://github.com/vuejs/vue">
-    <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue">
+    <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
   </a>
   <a href="https://github.com/fengziye/Gblog/blob/master/license">
-    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
+    <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
   </a>
   <a href="#donate">
-    <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
+    <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate"/>
   </a>
 </p>
 
@@ -19,7 +19,8 @@
 ### 介绍
 >
 > 一款nice的基于 vue 的博客模板。
-> 在一些布局样式上借鉴了[Akina For Typecho](https://zhebk.cn/Web/Akina.html)的风格，也做了一些自己的改动。
+> 在一些布局样式上借鉴了[Akina For Typecho](https://zhebk.cn/Web/Akina.html)的风格，也做了一些自己的改动。  
+> 打算用做搭建自己的博客使用，也开源给大家希望能喜欢。
 >
 #### 完成功能
 后面有时间在增加新功能以及优化
