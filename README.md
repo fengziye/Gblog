@@ -9,6 +9,9 @@
   <a href="https://github.com/fengziye/Gblog/blob/master/license">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license"/>
   </a>
+  <a href="https://github.com/fengziye/Gblog/releases">
+      <img src="https://img.shields.io/github/release/fengziye/Gblog.svg" alt="GitHub release">
+  </a>
 </p>
 
 仓库：[码云](https://gitee.com/fengziy/Gblog) | [github](https://github.com/fengziye/Gblog)  
