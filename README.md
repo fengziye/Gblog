@@ -60,6 +60,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### 打赏作者
 
 <p align="center">
-  <img width="90" src="http://cdn.fengziy.cn/gblog/ali_pay.jpg">
-  <img width="90" src="http://cdn.fengziy.cn/gblog/wexin_pay.png">
+  <img width="120" src="http://cdn.fengziy.cn/gblog/ali_pay.jpg">
+  <img width="120" src="http://cdn.fengziy.cn/gblog/wexin_pay.png">
 </p>
