@@ -9,7 +9,7 @@
   <a href="https://github.com/fengziye/Gblog/blob/master/license">
     <img src="https://img.shields.io/github/license/mashape/apistatus.svg" alt="license">
   </a>
-  <a href="#">
+  <a href="#donate">
     <img src="https://img.shields.io/badge/%24-donate-ff69b4.svg" alt="donate">
   </a>
 </p>
@@ -59,7 +59,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 #### 打赏作者
 
-<p align="center">
+<p align="center" id="donate">
   <img width="120" src="http://cdn.fengziy.cn/gblog/ali_pay.jpg">
   <img width="120" src="http://cdn.fengziy.cn/gblog/wexin_pay.png">
 </p>
