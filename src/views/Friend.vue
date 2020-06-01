@@ -134,5 +134,28 @@
         .friend-header{
             margin-top: 0;
         }
+        .friend-list{
+            .friend-item{
+                width: 45%;
+                &:nth-of-type(2n){
+                    margin-right: 0;
+                }
+                &:nth-of-type(3n){
+                    margin-right: 5%;
+                }
+            }
+        }
+    }
+    @media (max-width: 600px){
+        .friend-list{
+            .friend-item{
+                display: block;
+                width: 90%;
+                margin: 0 auto 20px auto;
+                &:nth-of-type(3n){
+                    margin-right: auto;
+                }
+            }
+        }
     }
 </style>

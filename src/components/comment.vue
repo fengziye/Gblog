@@ -1,28 +1,30 @@
 <template>
     <div class="comment" :id="`comment${comment.id}`">
-        <div class="user-avatar"><img :src="comment.fromUserAvatar" alt=""></div>
-        <div class="comment-body">
-            <section-title>
-                <div class="content-head" style="display: flex;align-items: center;justify-content: space-between;">
-                    <div>
-                        <span class="from-user user-name">{{comment.fromUserName}}</span>
-                        <span class="to-user" v-if="comment.toUserId"><span style="margin: 0 5px;">@</span><span class="user-name">{{comment.toUserName}}</span></span>
+        <div class="comment-head">
+            <div class="user-avatar"><img :src="comment.fromUserAvatar" alt=""></div>
+            <div class="head-right">
+                <section-title>
+                    <div style="display: flex;align-items: center;justify-content: space-between;">
+                        <div>
+                            <span class="from-user user-name">{{comment.fromUserName}}</span>
+                            <span class="to-user" v-if="comment.toUserId"><span style="margin: 0 5px;">@</span><span class="user-name">{{comment.toUserName}}</span></span>
+                        </div>
+                        <div style="font-size: 13px;">
+                            <span style="color: #9c9c9c;margin-right: 20px;">{{comment.createTime | parseTime}}</span>
+                            <span @click.stop="showCommentEditor=true" style="cursor: pointer;">回复</span>
+                        </div>
                     </div>
-                    <div style="font-size: 13px;">
-                        <span style="color: #9c9c9c;margin-right: 20px;">{{comment.createTime | parseTime}}</span>
-                        <span @click.stop="showCommentEditor=true" style="cursor: pointer;">回复</span>
-                    </div>
-                </div>
-            </section-title>
-            <div class="comment-content">
-                <div class="content-text">
-                    <p>{{comment.content}}</p>
-                </div>
-                <div v-if="showCommentEditor" @click.stop="">
-                    <comment-message-editor :inline="true" buttonText="回复" @submit="submitReply"></comment-message-editor>
-                </div>
-                <slot></slot>
+                </section-title>
             </div>
+        </div>
+        <div class="comment-body">
+            <div class="content-text">
+                <p>{{comment.content}}</p>
+            </div>
+            <div v-if="showCommentEditor" @click.stop="">
+                <comment-message-editor :inline="true" buttonText="回复" @submit="submitReply"></comment-message-editor>
+            </div>
+            <slot></slot>
         </div>
     </div>
 </template>
@@ -71,8 +73,26 @@
 
 <style scoped lang="less">
     .comment{
-        display: flex;
         margin: 20px 0;
+    }
+    .comment-head{
+        display: flex;
+        .head-right{
+            flex: 1;
+        }
+        .user-name{
+            color: #8fd0cc;
+        }
+    }
+    .comment-body{
+        padding-left: 80px;
+        .content-text{
+            /*padding-bottom: 30px;*/
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #9c9c9c;
+            line-height: 1.3rem;
+        }
     }
     .user-avatar{
         width: 50px;
@@ -84,23 +104,15 @@
             border-radius: 100%;
         }
     }
-    .comment-body{
-        flex: 1;
-        .comment-content{
+    @media (max-width: 600px){
+        .comment-body{
+            padding-left: 15px;
             .content-text{
-                margin: 15px 0 30px 0;
-                font-size: 14px;
-                color: #9c9c9c;
-                line-height: 1.3rem;
+                margin-top: 10px;
             }
         }
-        .content-head{
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            .user-name{
-                color: #8fd0cc;
-            }
+        .user-avatar{
+            margin-right: 10px;
         }
     }
 </style>

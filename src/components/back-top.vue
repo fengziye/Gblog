@@ -71,4 +71,9 @@
         display: unset;
     }
 }
+@media (max-width: 600px){
+    .back-top{
+        display: none;
+    }
+}
 </style>
