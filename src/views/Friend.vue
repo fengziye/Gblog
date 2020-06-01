@@ -152,6 +152,9 @@
                 display: block;
                 width: 90%;
                 margin: 0 auto 20px auto;
+                &:nth-of-type(2n){
+                    margin-right: auto;
+                }
                 &:nth-of-type(3n){
                     margin-right: auto;
                 }
