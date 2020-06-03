@@ -7,6 +7,10 @@
     <img src="https://gitee.com/fengziy/Gblog/badge/star.svg?theme=white" alt="star"/>
     <img src="https://gitee.com/fengziy/Gblog/badge/fork.svg" alt="fork"/>
   </a>
+  <a href="https://github.com/fengziye/Gblog">
+      <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg" alt="Github star"/>
+      <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg" alt="Github forks"/>
+  </a>
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
   </a>
@@ -65,6 +69,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### 打赏作者
 
 <p align="center" id="donate">
-  <img width="120" src="http://cdn.fengziy.cn/gblog/ali_pay.jpg">
-  <img width="120" src="http://cdn.fengziy.cn/gblog/wexin_pay.png">
+  <img width="120" src="https://images.gitee.com/uploads/images/2020/0603/220114_917674c1_1658323.jpeg">
+  <img width="120" src="https://images.gitee.com/uploads/images/2020/0603/220114_5dbe3aad_1658323.png">
 </p>
