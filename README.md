@@ -3,6 +3,10 @@
   <img width="80" src="http://cdn.fengziy.cn/gblog/logo.svg"/>
 </p>
 <p align="center">
+  <a href="https://gitee.com/fengziy/Gblog">
+    <img src="https://gitee.com/fengziy/Gblog/badge/star.svg?theme=white" alt="star"/>
+    <img src="https://gitee.com/fengziy/Gblog/badge/fork.svg" alt="fork"/>
+  </a>
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
   </a>
