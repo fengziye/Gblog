@@ -4,10 +4,12 @@
 </p>
 <p align="center">
   <a href="https://gitee.com/fengziy/Gblog">
-    <img src="https://gitee.com/fengziy/Gblog/badge/star.svg?theme=white" alt="vue"/>
+    <img src="https://gitee.com/fengziy/Gblog/badge/star.svg?theme=white" alt="star"/>
+    <img src="https://gitee.com/fengziy/Gblog/badge/fork.svg" alt="fork"/>
   </a>
-  <a href="https://gitee.com/fengziy/Gblog">
-      <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg?style=social&label=Stars" alt="vue"/>
+  <a href="https://github.com/fengziye/Gblog">
+      <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg" alt="Github star"/>
+      <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg" alt="Github forks"/>
   </a>
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
