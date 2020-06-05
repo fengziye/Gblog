@@ -1,5 +1,5 @@
 <template>
-    <div id="layout-body" :style="{minHeight:minHeight+'px'}">
+    <div id="layout-body">
         <router-view></router-view>
         <back-top></back-top>
     </div>
@@ -14,22 +14,15 @@
               minHeight: 600
           }
         },
-        components: { backTop },
-        methods:{
-          init(){
-              let _this = this
-              this.minHeight = document.documentElement.clientHeight
-              window.onresize = function () {
-                  _this.minHeight = document.documentElement.clientHeight
-              }
-          }
-        },
-        created() {
-            this.init()
-        }
+        components: { backTop }
     }
 </script>
 
 <style scoped>
-
+#layout-body{
+    /* header = 80px */
+    min-height: -moz-calc(100vh - 80px);
+    min-height: -webkit-calc(100vh - 80px);
+    min-height: calc(100vh - 80px);
+}
 </style>
