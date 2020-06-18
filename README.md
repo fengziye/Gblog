@@ -9,7 +9,7 @@
   </a>
   <a href="https://github.com/fengziye/Gblog">
       <img src="https://img.shields.io/github/stars/fengziye/Gblog.svg?style=social" alt="Github star"/>
-      <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg" alt="Github forks"/>
+      <img src="https://img.shields.io/github/forks/fengziye/Gblog.svg?style=social" alt="Github forks"/>
   </a>
   <a href="https://github.com/vuejs/vue">
     <img src="https://img.shields.io/badge/vue-2.6.11-brightgreen.svg" alt="vue"/>
