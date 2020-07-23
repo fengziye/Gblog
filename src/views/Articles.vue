@@ -2,6 +2,10 @@
     <div class="articles">
         <banner></banner>
         <div class="site-content animate">
+            <!-- 文章目录 -->
+            <div id="article-menus">
+                <menu-tree :menus="menus" child-label="child"></menu-tree>
+            </div>
             <main class="site-main">
                 <article class="hentry">
                     <!-- 文章头部 -->
@@ -129,19 +133,22 @@ yum -y install gcc-c++</code></pre>
     import Banner from '@/components/banner'
     import sectionTitle from '@/components/section-title'
     import comment from '@/components/comment'
+    import menuTree from '@/components/menu-tree'
     import {fetchComment} from '../api'
     export default {
         name: 'articles',
         data(){
           return{
               showDonate: false,
-              comments: []
+              comments: [],
+              menus: []
           }
         },
         components: {
             Banner,
             sectionTitle,
-            comment
+            comment,
+            menuTree
         },
         methods: {
           getComment(){
@@ -150,7 +157,39 @@ yum -y install gcc-c++</code></pre>
               }).catch(err => {
                   console.log(err)
               })
+          },
+          fetchH(arr,left,right){
+              if (right) {
+                  return arr.filter(item => item.offsetTop > left && item.offsetTop < right)
+              }else {
+                  return arr.filter(item => item.offsetTop > left)
+              }
+          },
+          // 生成目录
+          createMenus(){
+              let arr = []
+              for(let i=6;i>0;i--){
+                  let temp = []
+                  let e = document.querySelector(".entry-content").querySelectorAll(`h${i}`)
+                  for (let j=0;j<e.length;j++){
+                      let child = this.fetchH(arr,e[j].offsetTop,(j+1 === e.length)?undefined:e[j+1].offsetTop)
+                      temp.push({
+                          h: i,
+                          title: e[j].innerText,
+                          id: e[j].id,
+                          offsetTop: e[j].offsetTop,
+                          child
+                      })
+                  }
+                  if (temp.length){
+                      arr = temp
+                  }
+              }
+              this.menus = arr
           }
+        },
+        mounted(){
+            this.createMenus()
         },
         created() {
             this.getComment()
@@ -159,11 +198,21 @@ yum -y install gcc-c++</code></pre>
 </script>
 <style scoped lang="less">
     .site-content {
+        position: relative;
         .site-main {
             padding: 80px 0 0 0;
         }
     }
-
+    #article-menus{
+        position: sticky;
+        top: 0;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+        border-radius: 3px;
+        padding: 15px;
+        width: 300px;
+        transform: translateX(-120%) translateY(150px);
+        font-size: 14px;
+    }
     article.hentry {
         .entry-header {
             .entry-title {
