@@ -58,8 +58,8 @@ router.beforeEach((to, from, next) => {
     document.title = title
     if (to.path !== from.path) {
         store.dispatch('setLoading', true);
-        next();
     }
+    next();
 })
 router.afterEach((to, from) => {
     // 最多延迟 关闭 loading
