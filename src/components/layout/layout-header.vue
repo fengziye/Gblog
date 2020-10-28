@@ -1,12 +1,15 @@
 <template>
-    <div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}">
+    <div id="layout-header" :class="{'fixed':fixed,'hidden':hidden}" @click.stop="mobileShow=false">
         <div class="site-logo">
             <router-link to="/">
                 <img src="@/assets/site-logo.svg" alt="">
                 <p class="site-name">Gblog</p>
             </router-link>
         </div>
-        <div class="site-menus">
+        <div class="menus-btn" @click.stop="mobileShow=!mobileShow">
+            Menus
+        </div>
+        <div class="site-menus" :class="{'mobileShow':mobileShow}" @click.stop="mobileShow=!mobileShow">
             <div class="menu-item header-search"><header-search/></div>
             <div class="menu-item"><router-link to="/">首页</router-link></div>
             <div class="menu-item hasChild">
@@ -32,7 +35,8 @@
                 lastScrollTop: 0,
                 fixed: false,
                 hidden: false,
-                category: []
+                category: [],
+                mobileShow: false
             }
         },
         mounted(){
@@ -91,16 +95,6 @@
             box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
         }
     }
-    @media (max-width: 960px){
-        #layout-header{
-            padding: 0 20px;
-        }
-    }
-    @media (max-width: 600px){
-        #layout-header{
-            padding: 0 10px;
-        }
-    }
 
     .site-logo {
         text-align: center;
@@ -117,7 +111,10 @@
             top: -10px;
         }
     }
-
+    .menus-btn{
+        display: none;
+        visibility: hidden;
+    }
     .site-menus {
         display: flex;
         align-items: center;
@@ -192,6 +189,62 @@
                     z-index: 99;
                 }
             }
+        }
+    }
+    @media (max-width: 960px){
+        #layout-header{
+            padding: 0 20px;
+        }
+    }
+    @media (max-width: 600px){
+        #layout-header{
+            padding: 0 10px;
+        }
+        .menus-btn{
+            display: block;
+            visibility: visible;
+        }
+        .site-menus{
+            position: absolute;
+            display: none;
+            visibility: hidden;
+            background-color: #F9F9F9;
+            width: 100%;
+            left: 0;
+            top: 80px;
+            z-index: -9;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+            .menu-item{
+                position: relative;
+                height: unset;
+                &:not(:last-child) {
+                    margin-right: 0;
+                }
+            }
+            .childMenu{
+                position: relative;
+                width: 100%;
+                top: 0;
+                background-color: #F3F3F3;
+                opacity: 1;
+                visibility: visible;
+                border: none;
+                box-shadow: none;
+                &:before,&:after{
+                    content: '';
+                    position: relative;
+                    width: 0;
+                    height: 0;
+                    border-left: 0;
+                    border-right: 0;
+                    border-bottom: 0;
+                }
+            }
+        }
+        .site-menus.mobileShow{
+            display: inline-block;
+            visibility: visible;
+            z-index: 99;
         }
     }
 </style>
