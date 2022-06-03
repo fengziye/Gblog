@@ -23,7 +23,7 @@
 </p>
 
 仓库：[码云](https://gitee.com/fengziy/Gblog) | [github](https://github.com/fengziye/Gblog)  
-[预览demo](http://static.fengziy.cn/Gblog/)、[我的博客](https://www.fengziy.cn)
+[预览demo](http://static.fengziy.cn/Gblog/)、[我的博客](http://www.fengziy.cn)
 ### 介绍
 >
 > 一款nice的基于 vue 的博客模板。
