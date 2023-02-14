@@ -77,6 +77,5 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 #### User case（欢迎大家提供使用案例）
 
 - [黎先森的博客](https://www.lesslesson.com/)
-- [meng的博客](http://www.lqmblog.com/)
 - [WTM](http://blog.5zu5pu.com/)
 - [尘心博客](http://www.dengxiaochao.xyz)
