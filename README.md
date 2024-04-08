@@ -82,8 +82,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
 
-#### 配套小程序欢迎大家访问（目前暂无开源打算）
-
+#### 配套小程序欢迎大家访问（目前未开源,后续有开源打算）
+<p align="center" id="fzy">
+  <b>【FZY的博客】</b>
+  <img width="120" src="src/assets/gh_a3a666832e53_344.jpg">
+</p>
 <p align="center" id="fzy">
   <img width="120" src="src/assets/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240408095457.jpg">
   <img width="120" src="src/assets/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240408095506.jpg">
